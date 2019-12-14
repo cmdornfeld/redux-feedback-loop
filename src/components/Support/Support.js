@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
 
-class Supported extends Component {
+class Support extends Component {
 
     state = {
         support: ''
@@ -35,4 +35,4 @@ class Supported extends Component {
     }
 }
 
-export default connect()(Supported);
+export default connect()(Support);

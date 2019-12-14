@@ -30,6 +30,7 @@ class Feeling extends Component {
                         placeholder="Please enter 1 - 5" value={this.state.feeling} min="1" max="5" />
                     <button disabled={!this.state.feeling} onClick={this.enterFeelingInfoAndMoveForward}>Next</button>
                 </div>
+                {JSON.stringify(this.state)}
             </>
         )
     }

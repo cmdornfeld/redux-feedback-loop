@@ -30,9 +30,14 @@ class Understanding extends Component {
                     placeholder="Please enter 1 - 5" value={this.state.understanding} min="1" max="5" />
                     <button disabled={!this.state.understanding} onClick={this.enterUnderstandingInfoAndMoveForward}>Next</button>
                 </div>
+                {JSON.stringify(this.props.reduxState)}
             </>
         )
     }
 }
 
-export default connect()(Understanding);
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+})
+
+export default connect(putReduxStateOnProps)(Understanding);

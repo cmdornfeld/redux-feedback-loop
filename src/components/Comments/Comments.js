@@ -30,9 +30,14 @@ class Comments extends Component {
                         placeholder="Enter comments" value={this.state.comments} maxLength="70" />
                     <button onClick={this.enterCommentsInfoAndMoveForward}>Next</button>
                 </div>
+                {JSON.stringify(this.props.reduxState)}
             </>
         )
     }
 }
 
-export default connect()(Comments);
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+})
+
+export default connect(putReduxStateOnProps)(Comments);

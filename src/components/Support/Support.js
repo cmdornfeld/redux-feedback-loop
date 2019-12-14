@@ -30,9 +30,14 @@ class Support extends Component {
                     placeholder="Please enter 1 - 5" value={this.state.support} min="1" max="5" />
                     <button disabled={!this.state.support} onClick={this.enterSupportInfoAndMoveForward}>Next</button>
                 </div>
+                {JSON.stringify(this.props.reduxState)}
             </>
         )
     }
 }
 
-export default connect()(Support);
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+})
+
+export default connect(putReduxStateOnProps)(Support);

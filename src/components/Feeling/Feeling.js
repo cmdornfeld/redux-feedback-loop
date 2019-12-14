@@ -28,7 +28,7 @@ class Feeling extends Component {
                     <h3>How are you feeling today?</h3>
                     <input onChange={(event) => this.handleChange(event)} type="number" 
                         placeholder="Please enter 1 - 5" value={this.state.feeling} min="1" max="5" />
-                    <button onClick={this.enterFeelingInfoAndMoveForward}>Next</button>
+                    <button disabled={!this.state.feeling} onClick={this.enterFeelingInfoAndMoveForward}>Next</button>
                 </div>
             </>
         )

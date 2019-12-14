@@ -28,7 +28,7 @@ class Support extends Component {
                     <h3>How well are you being supported?</h3>
                     <input onChange={(event) => this.handleChange(event)} type="number" 
                     placeholder="Please enter 1 - 5" value={this.state.support} min="1" max="5" />
-                    <button onClick={this.enterSupportInfoAndMoveForward}>Next</button>
+                    <button disabled={!this.state.support} onClick={this.enterSupportInfoAndMoveForward}>Next</button>
                 </div>
             </>
         )

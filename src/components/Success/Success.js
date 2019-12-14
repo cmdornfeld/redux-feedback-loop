@@ -22,4 +22,4 @@ class Success extends Component {
 }
 
 
-export default connect()(Feeling);
+export default connect()(Success);

@@ -26,8 +26,8 @@ class Understanding extends Component {
                 <Header />
                 <div>
                     <h3>How well are you understaning the content?</h3>
-                    <input onChange={(event) => this.handleChange(event)} label="understanding" type="number" 
-                    placeholder="Understanding" value={this.state.understanding}  />
+                    <input onChange={(event) => this.handleChange(event)} type="number" 
+                    placeholder="Please enter 1 - 5" value={this.state.understanding} min="1" max="5" />
                     <button onClick={this.enterUnderstandingInfoAndMoveForward}>Next</button>
                 </div>
             </>

@@ -1,22 +1,38 @@
 import React, {Component} from 'react';
-
+import {connect} from 'react-redux';
 import Header from '../Header/Header';
 
 class Supported extends Component {
+
+    state = {
+        support: ''
+    }
+
+    enterSupportInfoAndMoveForward = () => {
+        this.props.dispatch({type: 'SUPPORT', payload: this.state});
+        this.props.history.push('/comments');
+    }
+
+    handleChange = (event) => {
+        console.log('In handle change with:', event.target.value);
+        this.setState({
+            support: event.target.value
+        })
+    }
+
     render() {
         return (
             <>
                 <Header />
                 <div>
-                    <form>
-                        <h3>How well are you being supported?</h3>
-                        <input label="supported" type="number" placeholder="Supported" />
-                        <button>Next</button>
-                    </form>
+                    <h3>How well are you being supported?</h3>
+                    <input onChange={(event) => this.handleChange(event)} label="supported" type="number" 
+                    placeholder="Supported" value={this.state.support} />
+                    <button onClick={this.enterSupportInfoAndMoveForward}>Next</button>
                 </div>
             </>
         )
     }
 }
 
-export default Supported;
+export default connect()(Supported);

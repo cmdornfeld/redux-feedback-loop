@@ -20,6 +20,10 @@ class Support extends Component {
         })
     }
 
+    returnToPreviousPage = () => {
+        this.props.history.push('/understanding');
+    }
+
     render() {
         return (
             <>
@@ -27,7 +31,8 @@ class Support extends Component {
                 <div>
                     <h3>How well are you being supported?</h3>
                     <input onChange={(event) => this.handleChange(event)} type="number" 
-                    placeholder="Please enter 1 - 5" value={this.state.support} min="1" max="5" />
+                        placeholder="Please enter 1 - 5" value={this.state.support} min="1" max="5" />
+                    <button onClick={this.returnToPreviousPage}>Back</button>
                     <button disabled={!this.state.support} onClick={this.enterSupportInfoAndMoveForward}>Next</button>
                 </div>
                 {JSON.stringify(this.props.reduxState)}
@@ -36,6 +41,7 @@ class Support extends Component {
     }
 }
 
+// REMOVE REDUXSTATE DECLARATION AND REMOVE FROM CONNECT; ADDED FOR TESTING ONLY
 const putReduxStateOnProps = (reduxState) => ({
     reduxState
 })

@@ -20,6 +20,10 @@ class Comments extends Component {
         })
     }
 
+    returnToPreviousPage = () => {
+        this.props.history.push('/support');
+    }
+
     render() {
         return (
             <>
@@ -28,6 +32,7 @@ class Comments extends Component {
                     <h3>Any comments you want to leave?</h3>
                     <input onChange={(event) => this.handleChange(event)} label="comments" type="text" 
                         placeholder="Enter comments" value={this.state.comments} maxLength="70" />
+                    <button onClick={this.returnToPreviousPage}>Back</button>
                     <button onClick={this.enterCommentsInfoAndMoveForward}>Next</button>
                 </div>
                 {JSON.stringify(this.props.reduxState)}
@@ -36,6 +41,7 @@ class Comments extends Component {
     }
 }
 
+// REMOVE REDUXSTATE DECLARATION AND REMOVE FROM CONNECT; ADDED FOR TESTING ONLY
 const putReduxStateOnProps = (reduxState) => ({
     reduxState
 })

@@ -30,10 +30,16 @@ class Feeling extends Component {
                         placeholder="Please enter 1 - 5" value={this.state.feeling} min="1" max="5" />
                     <button disabled={!this.state.feeling} onClick={this.enterFeelingInfoAndMoveForward}>Next</button>
                 </div>
-                {JSON.stringify(this.state)}
+                {JSON.stringify(this.props.reduxState)}
+                {/* REMOVE THE ABOVE LINE; FOR TESTING ONLY */}
             </>
         )
     }
 }
 
-export default connect()(Feeling);
+// REMOVE REDUXSTATE DECLARATION AND REMOVE FROM CONNECT; ADDED FOR TESTING ONLY
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+})
+
+export default connect(putReduxStateOnProps)(Feeling);

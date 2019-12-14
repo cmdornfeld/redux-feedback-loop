@@ -20,6 +20,11 @@ class Review extends Component {
             alert('Error adding feedback.  See console for details');
         })
     }
+
+    returnToPreviousPage = () => {
+        this.props.history.push('/comments');
+    }
+
     render() {
         return (
             <>
@@ -30,8 +35,11 @@ class Review extends Component {
                 <p>Understanding: {this.props.reduxState.understandingReducer.understanding}</p>
                 <p>Support: {this.props.reduxState.supportReducer.support}</p>
                 <p>Comments: {this.props.reduxState.commentsReducer.comments}</p>
+                <button onClick={this.returnToPreviousPage}>Back</button>
                 <button onClick={this.postFeedback}>Submit</button>
             </div>
+            {JSON.stringify(this.props.reduxState)}
+            {/* REMOVE THE ABOVE LINE; FOR TESTING ONLY */}
             </>
         )
     }

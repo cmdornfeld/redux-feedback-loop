@@ -1,3 +1,6 @@
+// Every page uses this header (except admin)
+// Created component to reuse it and will import into each form page
+
 import React, {Component} from 'react';
 
 class Header extends Component {

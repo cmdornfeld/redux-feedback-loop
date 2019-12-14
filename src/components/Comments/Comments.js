@@ -27,7 +27,7 @@ class Comments extends Component {
                 <div>
                     <h3>Any comments you want to leave?</h3>
                     <input onChange={(event) => this.handleChange(event)} label="comments" type="text" 
-                        placeholder="Enter comments" value={this.state.comments} />
+                        placeholder="Enter comments" value={this.state.comments} maxLength="70" />
                     <button onClick={this.enterCommentsInfoAndMoveForward}>Next</button>
                 </div>
             </>

@@ -53,7 +53,7 @@ class Comments extends Component {
                 <Card className={this.props.classes.card}>
                     <h3>Any comments you want to leave?</h3>
                     <TextField required label="Required" className={this.props.classes.textField} onChange={(event) => this.handleChange(event)} 
-                        label="comments" type="text" placeholder="Enter comments" value={this.state.comments} variant="outlined" maxLength="70" />
+                        type="text" placeholder="Enter comments" value={this.state.comments} variant="outlined" maxLength="70" />
                     <Button className={this.props.classes.button} onClick={this.returnToPreviousPage}
                         variant="contained" color="secondary">Back</Button>
                     <Button className={this.props.classes.button} onClick={this.enterCommentsInfoAndMoveForward}

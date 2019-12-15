@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 
+// Styling for material-UI
 const styles = theme => ({
     card: {
       minWidth: 256,
@@ -20,6 +21,7 @@ const styles = theme => ({
 
 class Success extends Component {
 
+    // Function to send user to the home page to start new feedback, upon the click of the "Leave new feedback" button
     clickHandle = () => {
         this.props.history.push('/');
     }

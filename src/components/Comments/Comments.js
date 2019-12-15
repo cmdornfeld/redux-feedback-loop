@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 
+// Styling for material-UI
 const styles = theme => ({
     card: {
       minWidth: 256,
@@ -25,11 +26,14 @@ class Comments extends Component {
         comments: ''
     }
 
+    // Function to send current State to the commentsReducer, in order to store the info in Redux
+    // After dispatching, function then moves the user on to the next page
     enterCommentsInfoAndMoveForward = () => {
         this.props.dispatch({type: 'COMMENTS', payload: this.state});
         this.props.history.push('/review');
     }
 
+    // Function to set the State of this component to the value typed/selected by the user
     handleChange = (event) => {
         console.log('In handle change with:', event.target.value);
         this.setState({
@@ -37,6 +41,7 @@ class Comments extends Component {
         })
     }
 
+    // Function to allow the user to return to the previous page and update/change their response
     returnToPreviousPage = () => {
         this.props.history.push('/support');
     }
@@ -54,15 +59,9 @@ class Comments extends Component {
                     <Button className={this.props.classes.button} onClick={this.enterCommentsInfoAndMoveForward}
                         variant="contained" color="primary">Next</Button>
                 </Card>
-                {JSON.stringify(this.props.reduxState)}
             </>
         )
     }
 }
 
-// REMOVE REDUXSTATE DECLARATION AND REMOVE FROM CONNECT; ADDED FOR TESTING ONLY
-const putReduxStateOnProps = (reduxState) => ({
-    reduxState
-})
-
-export default connect(putReduxStateOnProps)(withStyles(styles)(Comments));
+export default connect()(withStyles(styles)(Comments));

@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 
+// Styling for material-UI
 const styles = theme => ({
     card: {
       minWidth: 256,
@@ -25,11 +26,14 @@ class Support extends Component {
         support: ''
     }
 
+    // Function to send current State to the supportReducer, in order to store the info in Redux
+    // After dispatching, function then moves the user on to the next page
     enterSupportInfoAndMoveForward = () => {
         this.props.dispatch({type: 'SUPPORT', payload: this.state});
         this.props.history.push('/comments');
     }
 
+    // Function to set the State of this component to the value typed/selected by the user
     handleChange = (event) => {
         console.log('In handle change with:', event.target.value);
         this.setState({
@@ -37,6 +41,7 @@ class Support extends Component {
         })
     }
 
+    // Function to allow the user to return to the previous page and update/change their response
     returnToPreviousPage = () => {
         this.props.history.push('/understanding');
     }
@@ -54,15 +59,9 @@ class Support extends Component {
                     <Button className={this.props.classes.button} disabled={!this.state.support} onClick={this.enterSupportInfoAndMoveForward}
                         variant="contained" color="primary">Next</Button>
                 </Card>
-                {JSON.stringify(this.props.reduxState)}
             </>
         )
     }
 }
 
-// REMOVE REDUXSTATE DECLARATION AND REMOVE FROM CONNECT; ADDED FOR TESTING ONLY
-const putReduxStateOnProps = (reduxState) => ({
-    reduxState
-})
-
-export default connect(putReduxStateOnProps)(withStyles(styles)(Support));
+export default connect()(withStyles(styles)(Support));

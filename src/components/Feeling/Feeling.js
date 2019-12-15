@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 
-
+// Styling for material-UI
 const styles = theme => ({
     card: {
       minWidth: 256,
@@ -22,16 +22,18 @@ const styles = theme => ({
 
 class Feeling extends Component {
     
-
     state = {
         feeling: ''
     }
 
+    // Function to send current State to the feelingReducer, in order to store the info in Redux
+    // After dispatching, function then moves the user on to the next page
     enterFeelingInfoAndMoveForward = () => {
         this.props.dispatch({type: 'FEELING', payload: this.state});
         this.props.history.push('/understanding');
     }
 
+    // Function to set the State of this component to the value typed/selected by the user
     handleChange = (event) => {
         console.log('In handle change with:', event.target.value);
         this.setState({
@@ -52,16 +54,9 @@ class Feeling extends Component {
                         Next
                     </Button>
                 </Card>
-                {JSON.stringify(this.props.reduxState)}
-                {/* REMOVE THE ABOVE LINE; FOR TESTING ONLY */}
             </>
         )
     }
 }
 
-// REMOVE REDUXSTATE DECLARATION AND REMOVE FROM CONNECT; ADDED FOR TESTING ONLY
-const putReduxStateOnProps = (reduxState) => ({
-    reduxState
-})
-
-export default connect(putReduxStateOnProps)(withStyles(styles)(Feeling));
+export default connect()(withStyles(styles)(Feeling));

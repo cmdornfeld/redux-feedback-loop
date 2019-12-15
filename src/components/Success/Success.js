@@ -1,6 +1,22 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+
+const styles = theme => ({
+    card: {
+      minWidth: 256,
+      fontSize: 28,
+    },
+      textField: {
+        marginLeft: theme.spacing.unit,
+      },
+      button: {
+        margin: theme.spacing.unit,
+      },
+  });
 
 class Success extends Component {
 
@@ -11,15 +27,16 @@ class Success extends Component {
         return (
             <>
                 <Header />
-                <div>
+                <Card className={this.props.classes.card}>
                     <h3>Thank you! Your feedback has been successfully submitted.</h3>
                     <br/>
-                    <button onClick={this.clickHandle}>Leave new feedback</button>
-                </div>
+                    <Button className={this.props.classes.button} onClick={this.clickHandle}
+                        variant="contained" color="primary">Leave new feedback</Button>
+                </Card>
             </>
         )
     }
 }
 
 
-export default connect()(Success);
+export default connect()(withStyles(styles)(Success));

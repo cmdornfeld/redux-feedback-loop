@@ -10,7 +10,7 @@ import {Provider} from 'react-redux';
 const feelingReducer = (state=[], action) => {
     if (action.type === 'FEELING'){
         return action.payload
-        // State of feelingReducer is now equal to the former State of Feeling.js
+        // State of feelingReducer is now equal to the former of Feeling.js
     }
     return state;
 }
@@ -19,7 +19,7 @@ const feelingReducer = (state=[], action) => {
 const understandingReducer = (state=[], action) => {
     if (action.type === 'UNDERSTANDING'){
         return action.payload
-        // State of understandingReducer is now equal to the former State of Understanding.js
+        // State of understandingReducer is now equal to the State of Understanding.js
     }
     return state;
 }
@@ -28,7 +28,7 @@ const understandingReducer = (state=[], action) => {
 const supportReducer = (state=[], action) => {
     if (action.type === 'SUPPORT'){
         return action.payload
-        // State of supportReducer is now equal to the former State of Support.js
+        // State of supportReducer is now equal to the State of Support.js
     }
     return state;
 }
@@ -37,7 +37,7 @@ const supportReducer = (state=[], action) => {
 const commentsReducer = (state=[], action) => {
     if (action.type === 'COMMENTS'){
         return action.payload
-        // State of commentsReducer is now equal to the former State of Comments.js
+        // State of commentsReducer is now equal to the State of Comments.js
     }
     return state;
 }

@@ -39,4 +39,4 @@ For this weekend project (#5), we were given the task of creating an application
 Huge thanks to Prime Digital Academy(Minneapolis), my instructor, Mary, and my cohort, Trifid!
 
 ## Support
-If you have suggestions or issues, please email me at cmdornfeld@gmail.com
+No longer being supported... designed for learning purposes

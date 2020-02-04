@@ -3,12 +3,21 @@
 ## Description
 For this weekend project (#5), we were given the task of creating an application that allows the user to enter feedback about how they are feeling, how well they are comprehending the material, and how supported they feel.  Comments can also be added, but are not required.  The user is able to navigate through this loop and submit their results for that day.  Their results are then stored in a local database, for safekeeping.
 
+## Screen Shot
+
+#### Home page View
+
+![Add Entry Page](feedback_screenshot_support.png)
+
+#### Review View
+
+![Add Entry Page](feedback_screenshot_review.png)
+
 ## Prerequisites
 
 -   Node.js
--   express.js
 -   PG
--   database (Postico or equivalent)
+-   PostgreSQL
 
 
 ## Installation

@@ -48,7 +48,7 @@ class Feeling extends Component {
                 <Card className={this.props.classes.card}>
                     <h3>How are you feeling today?</h3>
                     <TextField required label="Required" className={this.props.classes.textField} onChange={(event) => this.handleChange(event)} type="number" 
-                        placeholder="Please enter 1 - 5" value={this.state.feeling} variant="outlined" min="1" max="5" />
+                        placeholder="Please enter 1 - 5" value={this.state.feeling} variant="outlined" min={1} max={5} />
                     <Button className={this.props.classes.button} disabled={!this.state.feeling} 
                         onClick={this.enterFeelingInfoAndMoveForward} variant="contained" color="primary" >
                         Next
